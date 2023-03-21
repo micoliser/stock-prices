@@ -106,33 +106,37 @@ function App() {
       {searchResult.length === 0 ? (
         <Dashboard stocks={stocks} />
       ) : (
-        <div>
-          {searchResult.map(
-            (
-              {
-                stockSymbol,
-                stockName,
-                currentPrice,
-                changeInPrice,
-                changePercent,
-                searchedValue,
-              },
-              index
-            ) => {
-              return (
-                <Result
-                  key={index}
-                  sym={stockSymbol}
-                  name={stockName}
-                  price={currentPrice}
-                  change={changeInPrice}
-                  changePer={changePercent}
-                  clickFunc={goBack}
-                  searchValue={searchedValue}
-                />
-              );
-            }
-          )}
+        <div className="result">
+          <div>
+            {searchResult.map(
+              (
+                {
+                  stockSymbol,
+                  stockName,
+                  currentPrice,
+                  changeInPrice,
+                  changePercent,
+                  searchedValue,
+                },
+                index
+              ) => {
+                return (
+                  <Result
+                    key={index}
+                    sym={stockSymbol}
+                    name={stockName}
+                    price={currentPrice}
+                    change={changeInPrice}
+                    changePer={changePercent}
+                    searchValue={searchedValue}
+                  />
+                );
+              }
+            )}
+          </div>
+          <button onClick={goBack} className="back">
+            Go Back
+          </button>
         </div>
       )}
     </div>

@@ -1,14 +1,6 @@
 import React from "react";
 
-function Result({
-  sym,
-  name,
-  price,
-  change,
-  changePer,
-  clickFunc,
-  searchValue,
-}) {
+function Result({ sym, name, price, change, changePer, searchValue }) {
   return (
     <div className="stock-result">
       {sym !== undefined ? (
@@ -35,13 +27,6 @@ function Result({
           <h3>No result found for stock {searchValue}</h3>
         </div>
       )}
-      <button
-        onClick={() => {
-          return clickFunc();
-        }}
-      >
-        Go Back
-      </button>
     </div>
   );
 }

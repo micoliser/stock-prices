@@ -1,0 +1,33 @@
+                        DESIGN PROCESS FOR STOCK PRICES
+
+PROCESS
+
+    Header: For a header, the search bar should have some basic functionalities like suggestions.
+    I implemented this functionality by making an api call to get all possible stock symbols from the
+    IEX cloud api and stored them in an array to enable the application know which symbols to suggest.
+    For faster response, I retrieve only the first 50 suggestions and populate a div under the search
+    bar with these results. On search, the search button is disabled until the request completes to 
+    avoid making multiple requests. A single stock can be searched or multiple stock names separated by comma.
+    When a stock is not found i.e response return undefined for the stock symbol, it is shown on the search results.
+
+    Stock Table: A web application is not so useful if the user has to search before anything is loaded so I built
+    a stock table from the first hundred symbols returned by the api call to get all symbols. This stock table contains
+    the stork symbol, name, current price, change in price and percentage change. This was implemented by a batch query
+    to IEX cloud and data mapped to get only required values. It takes approximately 10 seconds to load this data.
+
+    Search Result: The main aim of the web application is to be able to search for any given stock.
+    When a search is made, a request is sent to get the data for the symbol (or symbols if more than one
+    symbol is searched) and data is mapped to get required values. If a symbol is not found, it displays 
+    “no result found for <symbol>”. A button at the bottom of the page takes the user back to the stock table.
+
+CHALLENGES
+
+	I faced a couple of challenges while building this web application. The most notable being making 2 api requests on load.
+    It was challenging as the second request needed data gotten from the first request. At first an error was thrown as
+    the second api call was being made before the first returned and as such the data was not available.
+	I solved this challenge by wrapping both calls in a single use effect hook and awaiting each result to be returned before
+    the second is made. This is why the stock table takes 10 seconds approximately to populate data, at that point the 2 requests
+    are being made and awaited.
+
+
+Link to google document: https://docs.google.com/document/d/11vTDhspZ15X6RsywbE1Eofk79R-szTymtqUorLmTa3A/edit?usp=sharing
