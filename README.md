@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+<h1 align="center"> :chart_with_downwards_trend: Real Time Stock Prices :chart_with_upwards_trend: </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/micoliser/stock-prices?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/micoliser/stock-prices?style=for-the-badge)
 
-## Available Scripts
+<h2>Instructions</h2>
+    <p>
+    Using React or Vue.js, create a responsive dashboard that displays real-time stock prices from a 
+    public api such as <a href="https://iexcloud.io/" alt="iexcloud.io">IEX Cloud</a>
+    </p>
+    <p>
+    The dashboard should include a search bar that allows users to search for stock symbols, and the
+    dashboard should display the current price, change in price, and percentage change for each stock.
+    </p>
+<ul style="list-style-type: none; padding: 0px">
+    <h3>Using:</h3>
+    <li>Library: React Js</li>
+    <li>Api: <a href="https://iexcloud.io/" alt="iexcloud.io">IEX Cloud</a>
+</ul>
 
-In the project directory, you can run:
+### Installation:
 
-### `npm start`
+The dashboard can be installed by cloning this repository to your terminal
+With Git:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```commandline
+$ git clone https://github.com/micoliser/stock-prices.git
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Or using wget and unzip:
 
-### `npm test`
+```commandline
+$ wget https://github.com/micoliser/stock-prices/archive/refs/heads/master.zip
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then unzip the downloaded file
 
-### `npm run build`
+```commandline
+$ unzip master.zip
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Usage:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To use the dashboard, run the command; (Dashboard will be opened Default Browser)
 
-### `npm run eject`
+```commandline
+$ cd stock-prices
+$
+$ npm start
+$
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## The Dashboard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![New Opened Dashboard in broswer window showing searchbar](images/default_dash.png)
+The dashboard is opened after running `npm start` from the terminal and
+displays the first 100 stocks by default.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### The Dashboard search bar features
 
-## Learn More
+It supports typing suggestions based on user input (first 50 stocks, completes text on click).<br>
+![Search image showing suggestions](images/suggest_search.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Dashboard Results
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Dashboard results show the current price, change in price, and percentage change for each stock.
+![Search image showing result parameters](images/single_result.png)
 
-### Code Splitting
+Allows for multiple search
+![Search image showing multiple results of stock search](images/multi_result.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+When data is not found
+![Search image showing multiple results of stock search](images/no_result.png)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+NOTE: Full dashboard data takes approximately 10 seconds to load, Check network if loading takes longer.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
